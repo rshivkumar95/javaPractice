@@ -1,0 +1,63 @@
+package com.rest.service;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import com.database.TableData;
+import com.rest.model.Profile;
+import com.rest.model.Stock;
+
+public class StockService {
+		Map<Long,Stock> map = TableData.getStocks();
+	
+		
+	public StockService(){
+		
+		StockService s=new StockService();
+		s.fetchData();
+		
+	}
+	
+	public void fetchData()
+	{
+		String file="https://www.google.com/finance/getprices?q=TCS&x=NSE&f=d,o,h,l,c,v&p=2d&i=900";
+		try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+		    String line;
+		    int i=1;
+		    while ((line = br.readLine()) != null) {
+		       // process the line.
+		    	if(i<=7)
+		    		continue;
+		    	else
+		    	{
+		    		String stock[]=line.split(",");
+		    		Stock msg1 = new Stock("TCS", stock[0], stock[1], stock[2], stock[3], stock[4], stock[5]);
+		    		map.put(1l, msg1);
+		    	}
+		    	i++;
+		    }
+		}
+	}
+	public List<Stock> getAllStocks(){
+		ArrayList list = new ArrayList(map.values());
+		
+		return list;
+	}
+	
+//	public Profile addMessage(Profile m){
+//		long l = map.size()+1;
+//		map.put(l, m);
+//		return m;
+//	}
+		
+		
+		
+		
+		
+		
+}

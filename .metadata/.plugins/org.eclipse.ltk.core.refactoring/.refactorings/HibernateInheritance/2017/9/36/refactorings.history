@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;HibernateConcreate&apos;&#x0D;&#x0A;- Original project: &apos;HibernateInheritance&apos;&#x0D;&#x0A;- Destination element: &apos;HibernateConcreate&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     hibernate.cfg.xml&#x0D;&#x0A;     employee.hbm.xml" description="Copy files" destination="=HibernateConcreate" element1="hibernate.cfg.xml" element2="employee.hbm.xml" files="2" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1504590117742" units="0" version="1.0"/>
+</session>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ 	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ 		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+  
+ <hibernate-mapping>  
+  <class name="com.atos.java.hibernate.Spouse" table="spouse">  
+    <id name="spid" column="spid" />     
+    <property name="name" column="name" length="10"></property>    
+        <one-to-one name="p" class="com.atos.java.hibernate.Person" cascade="all"/>              
+              
+  </class>              
+ </hibernate-mapping>  

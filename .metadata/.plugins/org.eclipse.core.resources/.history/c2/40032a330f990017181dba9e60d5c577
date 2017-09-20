@@ -1,0 +1,50 @@
+package com.rest.service;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import com.database.TableData;
+import com.rest.model.Profile;
+import com.rest.model.Stock;
+
+public class StockService {
+		Map<Long,Stock> map = TableData.getStocks();
+	
+	public StockService() throws FileNotFoundException, IOException{
+		String file="https://www.google.com/finance/getprices?q=TCS&x=NSE&f=d,o,h,l,c,v&p=2d&i=900";
+		try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+		    String line;
+		    int i=1;
+		    while ((line = br.readLine()) != null) {
+		       // process the line.
+		    	if(i<=7)
+		    		continue;
+		    }
+		}
+		Stock msg1 = new Stock("TCS", "1505274300", "2499.85", "2499.85", "2499.85", "2499.85", "5");
+		map.put(1l, msg1);
+		
+	}
+	public List<Stock> getAllStocks(){
+		ArrayList list = new ArrayList(map.values());
+		
+		return list;
+	}
+	
+//	public Profile addMessage(Profile m){
+//		long l = map.size()+1;
+//		map.put(l, m);
+//		return m;
+//	}
+		
+		
+		
+		
+		
+		
+}

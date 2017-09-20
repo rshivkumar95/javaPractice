@@ -1,0 +1,45 @@
+package com.rest.resource;
+
+
+import java.util.*;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import com.rest.model.Profile;
+import com.rest.model.Stock;
+import com.rest.service.ProfileService;
+import com.rest.service.StockService;
+
+@Path("/stock")
+public class StockResource {
+	StockService service = new StockService();
+	
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String getMessage(){
+		return "REpresentation State Transfer";
+	}
+	
+	@Path("/allstock")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Stock> getAllStocks(){
+		return service.getAllStocks();
+	}
+	@POST
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Profile addMessage(Profile m){
+		return service.addMessage(m);
+	}
+	
+	
+	
+
+}

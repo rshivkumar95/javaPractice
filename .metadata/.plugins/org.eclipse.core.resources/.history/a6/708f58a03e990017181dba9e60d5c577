@@ -1,0 +1,30 @@
+package com.database;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.rest.model.Profile;
+
+public class DAO {
+	
+	
+	Connection conn=DataBaseClass.getDBConnection();
+	
+
+	public int insertMessageData(Profile m)throws SQLException{
+		
+		PreparedStatement pst=conn.prepareStatement("insert into messagedata value(?,?,?,?,?)");
+		pst.setLong(1, m.getId());
+		pst.setString(2, m.getProfileName());
+		pst.setString(3, m.getFirstName());
+		pst.setString(4, m.getLastName());
+		pst.setString(5, m.getCreated().toString());
+		
+		
+		return pst.executeUpdate();
+	}
+	
+	
+
+}

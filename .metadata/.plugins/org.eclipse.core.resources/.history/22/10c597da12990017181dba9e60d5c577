@@ -1,0 +1,41 @@
+package com.rest.service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import com.database.TableData;
+import com.rest.model.Profile;
+
+public class ProfileService {
+		Map<Long,Profile> map = TableData.getMessages();
+	
+	public ProfileService(){
+		Profile msg1 = new Profile(1l,"REST","RoyFielding","hjfdjs");
+		Profile msg2 = new Profile(2l,"JAVA","JamesGosling","zjshfs");
+		map.put(1l, msg1);
+		map.put(2l, msg2);
+	}
+	public List<Profile> getAllMessages(){
+		ArrayList list = new ArrayList(map.values());
+		
+		return list;
+	}
+	
+	public Profile addMessage(Profile m){
+		long l = map.size()+1;
+		map.put(l, m);
+		return m;
+	}
+	
+	public Profile updateprofile(Profile p)
+	{
+		
+	}
+		
+		
+		
+		
+		
+		
+}

@@ -1,0 +1,89 @@
+package com.rest.service;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+import java.util.Map;
+
+import com.database.DAO;
+import com.database.TableData;
+import com.rest.model.Profile;
+
+public class ProfileService {
+		Map<Long,Profile> map = TableData.getMessages();
+	
+		DAO d=new DAO();
+	public ProfileService(){
+		
+		
+	}
+	
+//	public List<Profile> getAllMessages(){
+//		ArrayList list = new ArrayList(map.values());
+//		
+//		return list;
+//	}
+	
+	public Profile addMessage(Profile m) throws SQLException{
+//		long l = map.size()+1;
+//		map.put(l, m);
+//		return m;
+		int i=d.insertMessageData(m);
+		if(i!=0)
+			return m;
+		return null;
+	}
+	
+	public Profile updateprofile(Profile p)
+	{
+		if(p.getId()<=0)
+		{
+			return null;
+		}
+		int i=d.updateData(p);
+		if(i!=0)			
+		 return p;
+		
+		return null;
+	}
+//	
+//	public Profile removeProfile(long id)
+//	{
+//		return map.remove(id);
+//	}
+//	
+//	public List<Profile> getAllMessagesForYear(int year)
+//	{
+//		List<Profile> pList=new ArrayList<>();
+//		Calendar cal=Calendar.getInstance();
+//		for(Profile p : map.values())
+//		{
+//			cal.setTime(p.getCreated());
+//			if(cal.get(Calendar.YEAR)==year)
+//			{
+//				pList.add(p);
+//			}
+//		}
+//		return pList;
+//	}
+//	public List<Profile> getAllMessagePaginated(int start, int size) {
+//		// TODO Auto-generated method stub
+//		List<Profile> pList=new ArrayList<>();
+//		int i=1;
+//		for(Profile p:map.values())
+//		{
+//			if(p.getId()>start & i++<=size)
+//			{
+//				pList.add(p);
+//			}
+//		}
+//		return pList;
+//	}
+//		
+//		
+		
+		
+		
+		
+}

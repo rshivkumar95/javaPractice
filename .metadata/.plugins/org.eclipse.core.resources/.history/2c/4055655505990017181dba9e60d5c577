@@ -1,0 +1,36 @@
+package com.rest.resource;
+
+import java.util.List;
+
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+
+import com.rest.model.Profile;
+import com.rest.service.ProfileService;
+
+@Path("/profile")
+public class ProfileResource {
+	
+	
+	ProfileService service=new ProfileService();
+	
+	@Path("/allprofiles")
+	@GET
+	@Produces(MediaType.APPLICATION_XML)
+	public List<Profile> gellAllProfile()
+	{
+		return service.getAllProfiles();
+	}
+	
+	
+	@POST
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Profile addMessage(Profile p){
+		return service.addProfile(p);
+	}
+	
+	
+	
+
+}

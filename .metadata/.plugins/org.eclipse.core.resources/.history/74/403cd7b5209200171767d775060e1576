@@ -1,0 +1,71 @@
+package com.atos.java.hibernate;
+
+import java.util.Iterator;
+import java.util.Scanner;
+
+import org.hibernate.*;
+import org.hibernate.cfg.*;
+
+
+public class FetchCourse {
+
+	
+		
+		private static final SessionFactory sessionFactory;
+		static{
+		try{
+		 sessionFactory=new AnnotationConfiguration().configure().buildSessionFactory();
+			}
+			catch(Throwable ex){
+				throw new ExceptionInInitializerError(ex);
+			}
+		}
+		
+		public static SessionFactory getSessionFactory(){
+			return sessionFactory;
+		}
+		
+		public static void main(String[] args) {
+			
+			SessionFactory sf=FetchCourse.getSessionFactory();
+			Session s=sf.getCurrentSession();
+			Transaction tx=s.beginTransaction();
+			
+			String SQL_QUERY="from Course c";
+			Query query=s.createQuery(SQL_QUERY);
+			
+			for(Iterator it=(Iterator) query.iterate();it.hasNext();)
+			{
+				Course c=(Course)it.next();
+				System.out.println(c.getId()+"\t"+c.getName()+" "+c.getDuration());
+				//System.out.println(it.next());
+				
+			}
+			SQL_QUERY="select c.name from Course c";
+			query=s.createQuery(SQL_QUERY);
+			for(Iterator it=(Iterator) query.iterate();it.hasNext();)
+			{
+				//Course c=(Course)it.next();
+				//System.out.println(c.getId()+"\t"+c.getName()+" "+c.getDuration());
+				System.out.println(it.next());
+				
+			}
+			
+			Scanner sc=new Scanner(System.in);
+			int x=sc.nextInt();
+			SQL_QUERY="from Course course where id="+x;
+			query=s.createQuery(SQL_QUERY);
+			for(Iterator it=(Iterator) query.iterate();it.hasNext();)
+			{
+				//Course c=(Course)it.next();
+				//System.out.println(c.getId()+"\t"+c.getName()+" "+c.getDuration());
+				System.out.println(it.next());
+				
+			}
+			
+			tx.commit();
+		}
+		
+}
+
+

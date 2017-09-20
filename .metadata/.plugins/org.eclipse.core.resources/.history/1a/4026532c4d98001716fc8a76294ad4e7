@@ -1,0 +1,14 @@
+package com.rest.service;
+
+import java.util.List;
+
+import com.rest.model.Message;
+
+public class MessageService {
+	
+	public List<Message> getAllMessage()
+	{
+		List<Message> list=new ArrayList<Message>();
+	}
+
+}

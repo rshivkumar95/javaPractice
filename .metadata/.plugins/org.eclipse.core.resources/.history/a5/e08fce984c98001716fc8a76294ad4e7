@@ -1,0 +1,12 @@
+package com.rest.model;
+
+import java.util.Date;
+
+public class Message {
+	
+	private long messageID;
+	private String message;
+	private Date created;
+	private String author;
+
+}

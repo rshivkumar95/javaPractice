@@ -1,0 +1,26 @@
+package com.rest.resource;
+
+import java.util.List;
+
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+
+import com.rest.model.Message;
+import com.rest.service.MessageService;
+
+@Path("/message")
+public class MessageResource {
+	
+	MessageService service=new MessageService();
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String getMessage()
+	{
+		return "Representation State Transfer";
+	}
+	
+	public List<Message> gellAllMessage()
+	{
+		return service.getAllMessage();
+	}
+}

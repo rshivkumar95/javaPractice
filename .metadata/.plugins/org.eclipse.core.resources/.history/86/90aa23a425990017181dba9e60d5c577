@@ -1,0 +1,77 @@
+package com.rest.resource;
+
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.*;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import com.rest.model.Profile;
+import com.rest.model.Stock;
+import com.rest.service.ProfileService;
+import com.rest.service.StockService;
+
+@Path("/stock")
+public class StockResource {
+	StockService service = new StockService();
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public ArrayList<String> getMessage(){
+		ArrayList<String> st=new ArrayList<String>();
+//		try {
+//			
+//            URL url = new URL("https://www.google.com/finance/getprices?q=TCS&x=NSE&f=d,o,h,l,c,v");
+////            URLConnection urlConn = url.openConnection();
+////            InputStreamReader inputStreamReader = new InputStreamReader(urlConn.getInputStream());
+////            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+////            String line;
+////            while ((line = bufferedReader.readLine()) != null) {
+////                System.out.println(line);
+////            }
+////            bufferedReader.close();
+////            inputStreamReader.close();
+//            
+//            URLConnection urlConn = url.openConnection();
+//            InputStreamReader inputStreamReader = new InputStreamReader(urlConn.getInputStream());
+//            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+//            String line;
+//            while ((line = bufferedReader.readLine()) != null) {
+//                st.add(line);
+//            }
+//            bufferedReader.close();
+//            inputStreamReader.close();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+		st.add("Shivkumar");
+		return st;
+		//return "REpresentation State Transfer";
+	}
+	
+	@Path("/allstock")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Stock> getAllStocks(){
+		return service.getAllStocks();
+	}
+//	@POST
+//	@Produces(MediaType.APPLICATION_JSON)
+//	@Consumes(MediaType.APPLICATION_JSON)
+//	public Profile addMessage(Profile m){
+//		return service.addMessage(m);
+//	}
+	
+	
+	
+
+}

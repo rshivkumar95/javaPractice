@@ -1,0 +1,30 @@
+package com.atos.java.test;
+
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class Test3 {
+
+	public String addDate(String date,int num,char dmy) throws ParseException
+	{
+		SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat sdf1=new SimpleDateFormat("yyyy-MM-dd");
+		
+		
+		Date d=sdf.parse(date);
+		
+		
+		return date;
+		
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Test3 t=new Test3();
+		t.addDate("", num, dmy)
+
+	}
+
+}

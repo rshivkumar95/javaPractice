@@ -1,0 +1,16 @@
+package com.database;
+
+import java.util.*;
+
+import com.rest.model.*;
+
+public class TableData {
+	
+	public static Map<Long,Message> messages = new HashMap();
+	public static Map<Long,Message> getProfiles(){
+		return messages;
+	}
+	
+	
+
+}

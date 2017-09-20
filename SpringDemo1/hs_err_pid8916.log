@@ -1,0 +1,163 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:61), pid=8916, tid=0x000000000000251c
+#
+# JRE version:  (8.0_141-b15) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.141-b15 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000001f74000):  JavaThread "Unknown thread" [_thread_in_vm, id=9500, stack(0x0000000001e70000,0x0000000001f70000)]
+
+Stack: [0x0000000001e70000,0x0000000001f70000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x0000000001f74000 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=9500, stack(0x0000000001e70000,0x0000000001f70000)]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 38400K, used 665K [0x00000000d5e00000, 0x00000000d8880000, 0x0000000100000000)
+  eden space 33280K, 2% used [0x00000000d5e00000,0x00000000d5ea6670,0x00000000d7e80000)
+  from space 5120K, 0% used [0x00000000d8380000,0x00000000d8380000,0x00000000d8880000)
+  to   space 5120K, 0% used [0x00000000d7e80000,0x00000000d7e80000,0x00000000d8380000)
+ ParOldGen       total 87552K, used 0K [0x0000000081a00000, 0x0000000086f80000, 0x00000000d5e00000)
+  object space 87552K, 0% used [0x0000000081a00000,0x0000000081a00000,0x0000000086f80000)
+ Metaspace       used 746K, capacity 4480K, committed 4480K, reserved 1056768K
+  class space    used 75K, capacity 384K, committed 384K, reserved 1048576K
+
+Card table byte_map: [0x0000000011430000,0x0000000011830000] byte_map_base: 0x0000000011023000
+
+Marking Bits: (ParMarkBitMap*) 0x00000000551ed850
+ Begin Bits: [0x0000000011ee0000, 0x0000000013e78000)
+ End Bits:   [0x0000000013e78000, 0x0000000015e10000)
+
+Polling page: 0x0000000001cf0000
+
+CodeCache: size=245760Kb used=328Kb max_used=328Kb free=245431Kb
+ bounds [0x0000000002070000, 0x00000000022e0000, 0x0000000011070000]
+ total_blobs=58 nmethods=0 adapters=38
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.049 loading class java/lang/Short
+Event: 0.049 loading class java/lang/Short done
+Event: 0.049 loading class java/lang/Integer
+Event: 0.049 loading class java/lang/Integer done
+Event: 0.049 loading class java/lang/Long
+Event: 0.049 loading class java/lang/Long done
+Event: 0.050 loading class java/lang/NullPointerException
+Event: 0.050 loading class java/lang/NullPointerException done
+Event: 0.050 loading class java/lang/ArithmeticException
+Event: 0.050 loading class java/lang/ArithmeticException done
+
+
+Dynamic libraries:
+0x00007ff7016c0000 - 0x00007ff7016f7000 	C:\Program Files\Java\jre1.8.0_141\bin\javaw.exe
+0x00007ff8acd60000 - 0x00007ff8acf0c000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ff8ab0a0000 - 0x00007ff8ab1de000 	C:\Windows\system32\KERNEL32.DLL
+0x00007ff8aa080000 - 0x00007ff8aa195000 	C:\Windows\system32\KERNELBASE.dll
+0x00007ff8a8a50000 - 0x00007ff8a8ade000 	C:\Windows\system32\apphelp.dll
+0x00007ff887850000 - 0x00007ff8878a3000 	C:\Windows\AppPatch\AppPatch64\AcGenral.DLL
+0x00007ff8accb0000 - 0x00007ff8acd5a000 	C:\Windows\system32\msvcrt.dll
+0x00007ff8a9d40000 - 0x00007ff8a9d6e000 	C:\Windows\SYSTEM32\SspiCli.dll
+0x00007ff8acc50000 - 0x00007ff8acca4000 	C:\Windows\system32\SHLWAPI.dll
+0x00007ff8acad0000 - 0x00007ff8acc47000 	C:\Windows\system32\USER32.dll
+0x00007ff8ac7d0000 - 0x00007ff8ac964000 	C:\Windows\system32\ole32.dll
+0x00007ff8ab1e0000 - 0x00007ff8ac6f9000 	C:\Windows\system32\SHELL32.dll
+0x00007ff8a94b0000 - 0x00007ff8a94d1000 	C:\Windows\SYSTEM32\USERENV.dll
+0x00007ff8aa3e0000 - 0x00007ff8aa48a000 	C:\Windows\system32\ADVAPI32.dll
+0x00007ff8a2ce0000 - 0x00007ff8a2cfe000 	C:\Windows\SYSTEM32\MPR.dll
+0x00007ff8aa490000 - 0x00007ff8aa5d1000 	C:\Windows\system32\RPCRT4.dll
+0x00007ff8aae60000 - 0x00007ff8aaeb9000 	C:\Windows\SYSTEM32\sechost.dll
+0x00007ff8aa780000 - 0x00007ff8aa991000 	C:\Windows\SYSTEM32\combase.dll
+0x00007ff8ac970000 - 0x00007ff8acac1000 	C:\Windows\system32\GDI32.dll
+0x00007ff8a9eb0000 - 0x00007ff8a9ec5000 	C:\Windows\SYSTEM32\profapi.dll
+0x00007ff8a8420000 - 0x00007ff8a84d2000 	C:\Windows\SYSTEM32\SHCORE.dll
+0x00007ff8aa9a0000 - 0x00007ff8aa9d6000 	C:\Windows\system32\IMM32.DLL
+0x00007ff8aaa40000 - 0x00007ff8aab92000 	C:\Windows\system32\MSCTF.dll
+0x0000000057c60000 - 0x0000000057c99000 	C:\PROGRA~2\Sophos\SOPHOS~3\SOPHOS~2.DLL
+0x00007ff8aa770000 - 0x00007ff8aa777000 	C:\Windows\system32\PSAPI.DLL
+0x00007ff8a7fa0000 - 0x00007ff8a821a000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9600.17810_none_6240b9c7ecbd0bda\COMCTL32.dll
+0x0000000053f50000 - 0x0000000054022000 	C:\Program Files\Java\jre1.8.0_141\bin\msvcr100.dll
+0x00000000549d0000 - 0x000000005526d000 	C:\Program Files\Java\jre1.8.0_141\bin\server\jvm.dll
+0x00007ff8993f0000 - 0x00007ff8993f9000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ff8a6890000 - 0x00007ff8a68b2000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ff8a6f60000 - 0x00007ff8a6f6a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ff8aa9e0000 - 0x00007ff8aaa3a000 	C:\Windows\system32\WS2_32.dll
+0x00007ff8a6860000 - 0x00007ff8a688a000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x00007ff8aac70000 - 0x00007ff8aac79000 	C:\Windows\system32\NSI.dll
+0x00007ff8a9f80000 - 0x00007ff8a9fcf000 	C:\Windows\SYSTEM32\cfgmgr32.dll
+0x00007ff8a8ca0000 - 0x00007ff8a8cc8000 	C:\Windows\SYSTEM32\DEVOBJ.dll
+0x00000000549c0000 - 0x00000000549cf000 	C:\Program Files\Java\jre1.8.0_141\bin\verify.dll
+0x0000000054990000 - 0x00000000549b9000 	C:\Program Files\Java\jre1.8.0_141\bin\java.dll
+0x0000000054970000 - 0x0000000054986000 	C:\Program Files\Java\jre1.8.0_141\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=Cp1252 
+java_command: com.atos.java.spring1.TestEmployee
+java_class_path (initial): D:\java\SpringDemo1\bin;C:\ATOS\JAVA_INSTALLATIONS\spring-framework-4.1.7.RELEASE\libs\spring-aop-4.1.7.RELEASE.jar;C:\ATOS\JAVA_INSTALLATIONS\spring-framework-4.1.7.RELEASE\libs\spring-aop-4.1.7.RELEASE-javadoc.jar;C:\ATOS\JAVA_INSTALLATIONS\spring-framework-4.1.7.RELEASE\libs\spring-aop-4.1.7.RELEASE-sources.jar;C:\ATOS\JAVA_INSTALLATIONS\spring-framework-4.1.7.RELEASE\libs\spring-aspects-4.1.7.RELEASE.jar;C:\ATOS\JAVA_INSTALLATIONS\spring-framework-4.1.7.RELEASE\libs\spring-aspects-4.1.7.RELEASE-javadoc.jar;C:\ATOS\JAVA_INSTALLATIONS\spring-framework-4.1.7.RELEASE\libs\spring-aspects-4.1.7.RELEASE-sources.jar;C:\ATOS\JAVA_INSTALLATIONS\spring-framework-4.1.7.RELEASE\libs\spring-beans-4.1.7.RELEASE.jar;C:\ATOS\JAVA_INSTALLATIONS\spring-framework-4.1.7.RELEASE\libs\spring-beans-4.1.7.RELEASE-javadoc.jar;C:\ATOS\JAVA_INSTALLATIONS\spring-framework-4.1.7.RELEASE\libs\spring-beans-4.1.7.RELEASE-sources.jar;C:\ATOS\JAVA_INSTALLATIONS\spring-framework-4.1.7.RELEASE\libs\spring-context-4.1.7.RELEASE.jar;C:\ATOS\JAVA_INSTALLATIONS\spring-framework-4.1.7.RELEASE\libs\spring-context-4.1.7.RELEASE-javadoc.jar;C:\ATOS\JAVA_INSTALLATIONS\spring-framework-4.1.7.RELEASE\libs\spring-context-4.1.7.RELEASE-sources.jar;C:\ATOS\JAVA_INSTALLATIONS\spring-framework-4.1.7.RELEASE\libs\spring-context-support-4.1.7.RELEASE.jar;C:\ATOS\JAVA_INSTALLATIONS\spring-framework-4.1.7.RELEASE\libs\spring-context-support-4.1.7.RELEASE-javadoc.jar;C:\ATOS\JAVA_INSTALLATIONS\spring-framework-4.1.7.RELEASE\libs\spring-context-support-4.1.7.RELEASE-sources.jar;C:\ATOS\JAVA_INSTALLATIONS\spring-framework-4.1.7.RELEASE\libs\spring-core-4.1.7.RELEASE.jar;C:\ATOS\JAVA_INSTALLATIONS\spring-framework-4.1.7.RELEASE\libs\spring-core-4.1.7.RELEASE-javadoc.jar;C:\ATOS\JAVA_INSTALLATIONS\spring-framework-4.1.7.RELEASE\libs\spring-core-4.1.7.RELEASE-sources.jar;C:\ATOS\JAVA_INSTALLATIONS\spring-framework-4.1.7.RELEASE\libs\spring-expression-4.1.7.RELEASE.jar;C:\ATOS\JAVA_INSTALLATIONS\
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_141
+PATH=C:/Program Files/Java/jre1.8.0_141/bin/server;C:/Program Files/Java/jre1.8.0_141/bin;C:/Program Files/Java/jre1.8.0_141/lib/amd64;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files (x86)\Windows Kits\8.0\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Java\jdk1.8.0_141\bin;C:\ATOS\JAVA_INSTALLATIONS\apache-maven-3.2.5\bin;C:\ATOS\JAVA_INSTALLATIONS\apache-ant-1.9.4\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Git\cmd;;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\MongoDB\Server\3.4\bin;C:\ATOS\JAVA_INSTALLATIONS\eclipse_neon;
+USERNAME=Administrator
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 61 Stepping 4, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 8.1 , 64 bit Build 9600 (6.3.9600.17415)
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 61 stepping 4, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, rtm, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 8274152k(1695136k free), swap 11419900k(4840k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.141-b15) for windows-amd64 JRE (1.8.0_141-b15), built on Jul 12 2017 04:25:12 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Wed Sep 06 12:25:16 2017
+elapsed time: 0 seconds (0d 0h 0m 0s)
+

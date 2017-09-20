@@ -1,0 +1,7 @@
+package com.atos.java.hibernate;
+
+public class UGStudent extends Student{
+
+	private int marks;
+	private float grade;
+}

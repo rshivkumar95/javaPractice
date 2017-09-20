@@ -1,0 +1,19 @@
+package com.rest.model;
+
+public class Stock {
+	
+	private String Symbol;
+	private String date;
+	private String close;
+	private String high;
+	private String low;
+	private String open;
+	private String volume;
+	public Stock()
+	{
+		
+	}
+	
+	
+
+}

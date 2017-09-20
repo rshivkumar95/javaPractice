@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ServletEx/WebContent/cookiesdemo.html&apos; to &apos;urldemo.html&apos;" description="Rename resource &apos;cookiesdemo.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/cookiesdemo.html" name="urldemo.html" stamp="1504151550948" updateReferences="true"/>
+</session>

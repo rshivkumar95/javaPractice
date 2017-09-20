@@ -1,0 +1,8 @@
+package com.atos.java.hibernate;
+
+public class PGStudent {
+	
+	private float points;
+	private String specilization;
+
+}

@@ -1,0 +1,40 @@
+package com.rest.resource;
+
+import java.util.List;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import com.rest.model.Message;
+import com.rest.service.MessageService;
+import com.rest.service.ProfileService;
+
+@Path("/profile")
+public class ProfileResource {
+	ProfileService service = new ProfileService();
+	
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String getProfile(){
+		return "REpresentation State Transfer";
+	}
+	
+	@Path("/allmessages")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Message> getAllMessage(){
+		return service.getAllProfile();
+	}
+
+	@POST
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Message addMessage(Message m){
+		return service.addMessage(m);
+	}
+}

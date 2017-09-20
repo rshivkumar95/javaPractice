@@ -1,0 +1,14 @@
+package com.atos.java.test;
+
+public class TestOrder {
+
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	
+		Customer c=new Customer(101,"Shivkumar");
+		
+
+	}
+
+}

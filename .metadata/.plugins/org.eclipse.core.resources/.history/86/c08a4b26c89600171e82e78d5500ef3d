@@ -1,0 +1,59 @@
+package com.atos.java.test;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Scanner;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		ArrayList<ArrayList<Integer>> arr=new ArrayList<ArrayList<Integer>>();
+		
+		Scanner sc=new Scanner(System.in);
+		
+		int count=sc.nextInt();
+		
+		while(count--!=0)
+		{
+			int num=sc.nextInt();
+			ArrayList<Integer> cnt=new ArrayList<Integer>();
+			while(num--!=0)
+			{
+				cnt.add(sc.nextInt());
+			}
+			arr.add(cnt);
+		}
+		
+		count=sc.nextInt();
+		while(count--!=0)
+		{
+			int num=sc.nextInt();
+			ArrayList<Integer> cnt=arr.get(sc.nextInt());
+			while(num--!=0)
+			{
+				cnt.add(sc.nextInt());
+			}
+			arr.add(cnt);
+		}
+		
+		Iterator<ArrayList<Integer>> it=arr.iterator();
+		
+		while(it.hasNext())
+		{
+			ArrayList<Integer> ai=it.next();
+			
+			Iterator<Integer> it1=ai.iterator();
+			
+			while(it1.hasNext())
+			{
+				System.out.print(it1.next()+" ");
+			}
+			System.out.println();
+			
+		}
+
+	}
+
+}

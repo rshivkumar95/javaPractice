@@ -1,0 +1,79 @@
+package abc;
+
+import java.util.*;
+
+
+public class Day7_ElementsinArrayList
+{
+	public static void main(String[] args)
+	{
+		
+		Scanner sc=new Scanner(System.in);
+		ArrayList<Integer> l1=new ArrayList<Integer>();
+		ArrayList<Integer> l2=new ArrayList<Integer>();
+		
+		int count=sc.nextInt();
+		while(count--!=0)
+		{
+			l1.add(sc.nextInt());
+		}
+		
+		count=sc.nextInt();
+		while(count--!=0)
+		{
+			l2.add(sc.nextInt());
+		}
+		
+		int[] uncommon=UserMainCode.arrayListSubtractor(l1,l2);
+		
+		int i=0;
+		while(i<uncommon.length)
+		{
+			System.out.print(uncommon[i]+" ");
+			i++;
+		}
+		
+		//fill your code here
+						
+	}
+}
+
+
+class UserMainCode
+{
+	public static int[] arrayListSubtractor(ArrayList<Integer> arrlist1,ArrayList<Integer> arrlist2)
+	{
+		
+		//fill your code here
+//		ArrayList<Integer> temp=arrlist1;
+//		arrlist1.removeAll(arrlist2);
+//		System.out.println(arrlist1);
+//		arrlist2.removeAll(temp);
+//		System.out.println(arrlist2);
+		
+		ArrayList<Integer> AB=new ArrayList<integer>();
+		for(Integer i:arrlist1)
+		{	
+			if(!arrlist1.contains(i))
+				
+			
+		}
+		for(Integer i:arrlist2)
+		{
+			s.add(i);
+		}
+		int a[]=new int[s.size()];
+		int j=0;
+		for(Integer i:s)
+		{
+			System.out.println(i);
+			a[j++]=i;
+		}
+		return a;
+	}
+}
+
+
+
+
+

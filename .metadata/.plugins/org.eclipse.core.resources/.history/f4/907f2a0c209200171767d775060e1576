@@ -1,0 +1,47 @@
+package com.atos.java.hibernate;
+
+import java.util.Iterator;
+
+import org.hibernate.*;
+import org.hibernate.cfg.*;
+
+
+public class FetchCourse {
+
+	
+		
+		private static final SessionFactory sessionFactory;
+		static{
+		try{
+		 sessionFactory=new AnnotationConfiguration().configure().buildSessionFactory();
+			}
+			catch(Throwable ex){
+				throw new ExceptionInInitializerError(ex);
+			}
+		}
+		
+		public static SessionFactory getSessionFactory(){
+			return sessionFactory;
+		}
+		
+		public static void main(String[] args) {
+			
+			SessionFactory sf=FetchCourse.getSessionFactory();
+			Session s=sf.getCurrentSession();
+			Transaction tx=s.beginTransaction();
+			
+			String SQL_QUERY="from Course course";
+			Query query=s.createQuery(SQL_QUERY);
+			
+			for(Iterator it=(Iterator) query.iterate();it.hasNext();)
+			{
+				Course c=(Course)it.next();
+				System.out.println(c.getId()+"\t"+c.getName()+" "+c.getDuration());
+				
+			}
+			tx.commit();
+		}
+		
+}
+
+

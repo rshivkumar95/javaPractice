@@ -1,0 +1,16 @@
+package com.database;
+
+import com.rest.model.*;
+
+import java.util.*;
+
+import com.atos.model.Message;
+import com.atos.model.Profile;
+
+public class TableData {
+	public static Map<Long,Profile> map=new HashMap(); 
+	public static Map<Long,Profile> getMessages()
+	{
+		return map;
+	}
+}

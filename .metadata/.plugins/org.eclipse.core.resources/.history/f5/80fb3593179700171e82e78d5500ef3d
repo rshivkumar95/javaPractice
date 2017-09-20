@@ -1,0 +1,30 @@
+package com.atos.java.test;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class TestOrder {
+
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	
+		Customer c=new Customer(101,"Shivkumar");
+		Order o1=new Order(1001,"COD","Mobile");
+		Order o2=new Order(1002,"NEFT","Lptop");
+		c.addNewOrder(o1);
+		c.addNewOrder(o2);
+		
+		ArrayList<Order> li=c.getOrderList();
+		Iterator<Order> it=li.iterator();
+		
+		while(it.hasNext())
+		{
+			Order o=it.next();
+			System.out.println();
+		}
+		
+
+	}
+
+}

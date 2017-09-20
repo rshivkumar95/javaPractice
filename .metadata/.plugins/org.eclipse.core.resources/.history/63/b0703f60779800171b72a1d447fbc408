@@ -1,0 +1,23 @@
+package com.rest.model;
+
+import java.util.Date;
+
+public class Profile {
+	
+	private static long id=0;
+	private String profileName;
+	private String firstName;
+	private String lastName;
+	private Date created;
+	public Profile(String profileName, String firstName, String lastName) {
+		
+		this.id=++i;
+		this.profileName = profileName;
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+	
+	
+	
+
+}

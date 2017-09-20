@@ -1,0 +1,10 @@
+package com.database;
+
+public class DataBaseClass {
+	
+	public int insertMessageData(Profile m)throws SQlException{
+		
+		
+	}
+
+}

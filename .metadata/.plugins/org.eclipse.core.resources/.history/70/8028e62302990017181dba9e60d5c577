@@ -1,0 +1,12 @@
+package com.database;
+
+import java.util.HashMap;
+
+import com.rest.model.*;
+
+public class TableData {
+	
+	public static Map<Long,Profile> map=new HashMap();
+	
+
+}
